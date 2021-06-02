@@ -122,7 +122,10 @@ plt.legend(['True prices', 'Predicted prices'], loc='best')
 plt.show()
 ```
 #### 2.5.1 전체 데이터 예측
-![전체 데이터](C:/Users/cksgh/OneDrive/바탕 화면/ai1.png)
+![ai1](https://user-images.githubusercontent.com/26360280/120511010-ef61a800-c404-11eb-9105-671c7d7f061c.png)
+
+#### 2.5.2 일부 데이터 예측 확대
+![ai2](https://user-images.githubusercontent.com/26360280/120511018-f092d500-c404-11eb-8819-3e5716357962.png)
 
 ### 2.6. 미래 예측
 ```python
@@ -143,3 +146,7 @@ else:
   print("예상 시간별 손익 : ", str(sub))
 print("예상 수익률 : ", str(rate))
 ```
+
+![nextPredict](https://user-images.githubusercontent.com/26360280/120511709-9f371580-c405-11eb-8d71-c86975b76867.png)
+
+다음과 같이 예상 시간별 손익과 수익률을 출력해서 볼 수 있도록 구현은 하였으나 외부변수의 적용이 안되는 점 때문에 피를 볼 수도 있는 예측일 수 있다.
