@@ -86,8 +86,8 @@ x_test=X[split:]; y_test=Y[split:]
 model=Sequential()                                #학습모델 구축
 model.add(LSTM(128,activation='relu',input_shape=(x_train.shape[1], x_train.shape[2], ))) #활성함수로는 relu 사용
 model.add(Dense(1))
-model.compile(loss='mae', optimizer='adam', metrics=['mae']) #mae를 사용해야 특이값에 덜 민감하다.
-model.fit(x_train, y_train, epochs=30,batch_size=32,validation_data=(x_test,y_test),verbose=2)
+model.compile(loss='mae', optimizer='nadam', metrics=['mae']) #mae를 사용해야 특이값에 덜 민감하다.
+model.fit(x_train, y_train, epochs=200,batch_size=32,validation_data=(x_test,y_test),verbose=2)
 model.summary()
 
 #예측
@@ -122,10 +122,10 @@ plt.legend(['True prices', 'Predicted prices'], loc='best')
 plt.show()
 ```
 #### 2.5.1 전체 데이터 예측
-![ai1](https://user-images.githubusercontent.com/26360280/120511010-ef61a800-c404-11eb-9105-671c7d7f061c.png)
+![ai1](https://user-images.githubusercontent.com/26360280/120883297-5eaee600-c617-11eb-9cab-b8c87258a664.png)
 
 #### 2.5.2 일부 데이터 예측 확대
-![ai2](https://user-images.githubusercontent.com/26360280/120511018-f092d500-c404-11eb-8819-3e5716357962.png)
+![ai2](https://user-images.githubusercontent.com/26360280/120883298-5fe01300-c617-11eb-8237-d3f34074fd78.png)
 
 ### 2.6. 미래 예측
 ```python
@@ -147,6 +147,6 @@ else:
 print("예상 수익률 : ", str(rate))
 ```
 
-![nextPredict](https://user-images.githubusercontent.com/26360280/120511709-9f371580-c405-11eb-8d71-c86975b76867.png)
+![캡처](https://user-images.githubusercontent.com/26360280/120883335-90c04800-c617-11eb-8a79-26b9f57a0c30.PNG)
 
 다음과 같이 예상 시간별 손익과 수익률을 출력해서 볼 수 있도록 구현은 하였으나 외부변수의 적용이 안되는 점 때문에 피를 볼 수도 있는 예측일 수 있다.
